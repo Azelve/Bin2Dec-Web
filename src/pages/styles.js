@@ -32,18 +32,18 @@ export const Container = styled.div`
       padding: 5px;
 
       span {
-        font-family: roboto;
-        font-size: 24px;
+        font-family: "Segoe UI";
+        font-size: 20px;
       }
 
       a {
         color: white;
         text-decoration: none;
-        transition: 0.5s ease;
+        transition: 0.3s ease;
       }
 
       a:hover {
-        color: #0c7b49;
+        color: green;
         font-size: 18px;
 
         text-shadow: #0c7b49;
@@ -60,7 +60,7 @@ export const Title = styled.h1`
 
 export const ConverterBox = styled.div`
   max-width: 400px;
-  max-height: 400px;
+  max-height: 300px;
 
   width: 100%;
   height: 100%;
@@ -90,7 +90,6 @@ export const ConverterBox = styled.div`
 export const Input = styled.input.attrs((props) => ({
   type: "number",
   placeholder: `${props.onHolder}`,
-  id: `${props.id}`,
 }))`
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -103,7 +102,7 @@ export const Input = styled.input.attrs((props) => ({
   width: 250px;
   padding: 10px 0 10px 35px;
   font-weight: 400;
-  color: #377d6a;
+  color: #0c7b49;
   background: #efefef;
   border: 0;
   border-radius: 3px;
@@ -130,7 +129,7 @@ export const Input = styled.input.attrs((props) => ({
     left: 30px;
     padding: 10px 15px;
     text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
-    background: #7ab893;
+    background: #0c7b49;
     transition: all 0.4s ease-in-out;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
@@ -146,7 +145,7 @@ export const Input = styled.input.attrs((props) => ({
       bottom: 0;
       left: 0;
       border-radius: 3px;
-      background: #377d6a;
+      background: #0c7b49;
       transform-origin: left bottom;
       transition: all 0.4s ease-in-out;
       pointer-events: none;
@@ -172,7 +171,7 @@ export const InputBox = styled.span`
   }
   ${Input}:focus,
   ${Input}:active {
-    color: #377d6a;
+    color: #0c7b49;
     text-indent: 0;
     background: #fff;
     border-top-right-radius: 3px;
@@ -192,9 +191,34 @@ export const InputBox = styled.span`
   }
 `;
 
-export const ResponseBox = styled(InputBox)``;
+export const ResponseBox = styled.span`
+  margin: 0px 40px;
 
-export const Response = styled(Input)``;
+  label {
+    color: #0c7b49;
+  }
+`;
+
+export const Response = styled.output`
+  display: flex;
+  width: 180px;
+  height: 15px;
+  padding: 10px 0 10px 35px;
+  font-weight: 400;
+  color: #0c7b49;
+  background: #efefef;
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  text-indent: 65px; // Arbitrary.
+  transition: all 0.3s ease-in-out;
+  margin-top: 5px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  margin-left: 40px;
+`;
 
 export const ButtonBox = styled.span`
   display: flex;
@@ -202,25 +226,28 @@ export const ButtonBox = styled.span`
 `;
 
 export const Button = styled.button`
-  align-items: center;
-  justify-content: center;
-
   font-size: 20px;
 
-  margin: 10px;
-
-  width: 100px;
-  height: 50px;
-
-  border-radius: 30px;
-
-  display: inline-flex;
+  margin-top: 15px;
 
   outline: none;
 
   cursor: pointer;
 
-  padding: 8px;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius: 40px;
+  background: #000;
+  border: 2px solid green;
+  color: green;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  transition: 0.3s ease;
 
-  background-color: #e5e5e5;
+  &:hover {
+    color: #000;
+    background: green;
+    box-shadow: rgba(0, 255, 0, 0.8);
+  }
 `;

@@ -21,20 +21,24 @@ function App() {
           <ConverterBox>
             <form>
               <InputBox>
-                <Input onHolder="Either 0 or 1" id="input" />
-                <label for="input">Binary</label>
+                <Input onHolder="Either 0 or 1" />
+                <label>Binary</label>
               </InputBox>
 
               <ResponseBox>
-                <Response onHolder="Conversion" id="response" />
-                <label for="response">Decimal</label>
+                <label>Decimal</label>
+                <Response onHolder="Conversion" />
               </ResponseBox>
-
-              <ButtonBox>
-                <Button>Convert</Button>
-              </ButtonBox>
             </form>
           </ConverterBox>
+
+          <Button
+            onClick={() => {
+              window.alert("Onde a resposta em número decimal poderia sair!");
+            }}
+          >
+            Convert
+          </Button>
 
           <footer>
             <span>&copy; </span>
