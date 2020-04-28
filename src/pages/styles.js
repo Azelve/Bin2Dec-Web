@@ -40,16 +40,17 @@ export const Container = styled.div`
       width: 130px;
       border-radius: 40px;
       background: #000;
-      border: 2px solid green;
-      color: green;
+      border: 2px solid #00b300;
+      color: #00b300;
       letter-spacing: 1px;
       text-shadow: 0;
       transition: 0.3s ease;
 
       &:hover {
         color: #000;
-        background: green;
+        background: #00b300;
         box-shadow: rgba(0, 255, 0, 0.8);
+        font-weight: bold;
       }
     }
 
@@ -70,7 +71,7 @@ export const Container = styled.div`
       }
 
       a:hover {
-        color: green;
+        color: #00b300;
         font-size: 18px;
 
         text-shadow: #0c7b49;
@@ -82,7 +83,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   text-align: center;
 
-  color: green;
+  color: #00b300;
 `;
 
 export const ConverterBox = styled.div`
@@ -98,7 +99,7 @@ export const ConverterBox = styled.div`
   align-self: center;
 
   border-radius: 30px;
-  border: 6px solid green;
+  border: 6px solid #00b300;
 
   background-color: white;
 
@@ -169,7 +170,7 @@ export const Input = styled.input`
       bottom: 0;
       left: 0;
       border-radius: 3px;
-      background: #0c7b49;
+      background: ${(props) => props.backgroundAfter};
       transform-origin: left bottom;
       transition: all 0.4s ease-in-out;
       pointer-events: none;
@@ -219,7 +220,7 @@ export const ResponseBox = styled.span`
   margin: 0px 40px;
 
   label {
-    color: #0c7b49;
+    color: #008000;
   }
 `;
 
@@ -230,7 +231,7 @@ export const Response = styled.output`
   height: 15px;
   padding: 10px 0 10px 25px;
   font-weight: 400;
-  color: #0c7b49;
+  color: #008000;
   background: #efefef;
   border: 0;
   border-radius: 3px;

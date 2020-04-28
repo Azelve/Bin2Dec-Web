@@ -13,18 +13,46 @@ export default function App() {
   // Here we have the variables to our binary and decimal numbers
   const [binary, setBinary] = useState(0);
   const [decimal, setDecimal] = useState(0);
+  const [label, setLabel] = useState("Binary");
+  const [labelColor, setLabelColor] = useState("#008000");
 
-  // Here we are seting the new Binary number onChange
+  // Here we are seting the new Binary number onChange and checking if is a binary number
   function checkField(e) {
-    setBinary(e.target.value[0]);
+    const binaryCheck = e.target.value;
+    let x;
+
+    if (binaryCheck === "") {
+      setBinary();
+      setLabel("Empty");
+      return setLabelColor("#e59400");
+    }
+
+    for (x of binaryCheck) {
+      if (x !== "0" && x !== "1") {
+        setLabel("Error!");
+        return setLabelColor("#b20000");
+      }
+      setLabel("Binary");
+      setLabelColor("#008000");
+      setBinary(binaryCheck);
+    }
   }
 
   // Here we are checking if the number is correct and making the conversion
   function converter() {
-    if (!binary) {
-      return alert("Please, input a value!");
+    let conversion;
+
+    if (label === "Error!") {
+      return alert("Please, enter a binary number!");
     }
-    setDecimal(binary);
+
+    if (!binary) {
+      return alert("Please, enter a value!");
+    }
+
+    conversion = parseInt(binary, 2);
+
+    setDecimal(conversion);
   }
 
   return (
@@ -37,12 +65,13 @@ export default function App() {
             <div>
               <InputBox>
                 <Input
+                  backgroundAfter={labelColor}
                   type="number"
                   placeholder="Either 0 or 1"
                   name="Binary"
                   onChange={checkField}
                 />
-                <label>Binary</label>
+                <label>{label}</label>
               </InputBox>
 
               <ResponseBox>
