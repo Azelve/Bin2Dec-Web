@@ -30,7 +30,7 @@ export default function App() {
     for (x of binaryCheck) {
       if (x !== "0" && x !== "1") {
         setLabel("Error!");
-        return setLabelColor("#b20000");
+        return setLabelColor("#e50000");
       }
       setLabel("Binary");
       setLabelColor("#008000");
