@@ -39,7 +39,7 @@ export default function App() {
   }
 
   // Here we are checking if the number is correct and making the conversion
-  function converter() {
+  function convert() {
     let conversion;
 
     if (label === "Error!") {
@@ -81,7 +81,7 @@ export default function App() {
             </div>
           </ConverterBox>
 
-          <button onClick={() => converter()}>Convert</button>
+          <button onClick={() => convert()}>Convert</button>
 
           <footer>
             <span>&copy; </span>
