@@ -160,6 +160,7 @@ export const Input = styled.input`
     border-bottom-left-radius: 3px;
     transform-origin: left bottom;
     z-index: 99;
+    border-radius: 8px;
 
     &:before,
     &:after {
@@ -169,7 +170,7 @@ export const Input = styled.input`
       right: 0;
       bottom: 0;
       left: 0;
-      border-radius: 3px;
+      border-radius: 8px;
       background: ${(props) => props.backgroundAfter};
       transform-origin: left bottom;
       transition: all 0.4s ease-in-out;
@@ -207,7 +208,7 @@ export const InputBox = styled.span`
     }
     + label {
       transform: rotate(-66deg);
-      border-radius: 3px;
+      border-radius: 8px;
 
       &:before {
         transform: rotate(10deg);
