@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   Title,
   ConverterBox,
   InputBox,
   Input,
-  ButtonBox,
-  Button,
   ResponseBox,
   Response,
 } from "./styles";
 
-function App() {
+export default function App() {
+  // Here we have the variables to our binary and decimal numbers
+  const [binary, setBinary] = useState(0);
+  const [decimal, setDecimal] = useState(0);
+
+  // Here we are seting the new Binary number onChange
+  function checkField(e) {
+    setBinary(e.target.value[0]);
+  }
+
+  // Here we are checking if the number is correct and making the conversion
+  function converter() {
+    if (!binary) {
+      return alert("Please, input a value!");
+    }
+    setDecimal(binary);
+  }
+
   return (
     <Container>
       <div id="Box">
@@ -19,26 +34,25 @@ function App() {
           <Title>Bin2Dec</Title>
 
           <ConverterBox>
-            <form>
+            <div>
               <InputBox>
-                <Input onHolder="Either 0 or 1" />
+                <Input
+                  type="number"
+                  placeholder="Either 0 or 1"
+                  name="Binary"
+                  onChange={checkField}
+                />
                 <label>Binary</label>
               </InputBox>
 
               <ResponseBox>
                 <label>Decimal</label>
-                <Response onHolder="Conversion" />
+                <Response>{decimal}</Response>
               </ResponseBox>
-            </form>
+            </div>
           </ConverterBox>
 
-          <Button
-            onClick={() => {
-              window.alert("Onde a resposta em número decimal poderia sair!");
-            }}
-          >
-            Convert
-          </Button>
+          <button onClick={() => converter()}>Convert</button>
 
           <footer>
             <span>&copy; </span>
@@ -51,5 +65,3 @@ function App() {
     </Container>
   );
 }
-
-export default App;

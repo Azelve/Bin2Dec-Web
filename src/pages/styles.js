@@ -26,6 +26,33 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
+    button {
+      font-size: 20px;
+
+      margin-top: 15px;
+
+      outline: none;
+
+      cursor: pointer;
+
+      height: 40px;
+      text-align: center;
+      width: 130px;
+      border-radius: 40px;
+      background: #000;
+      border: 2px solid green;
+      color: green;
+      letter-spacing: 1px;
+      text-shadow: 0;
+      transition: 0.3s ease;
+
+      &:hover {
+        color: #000;
+        background: green;
+        box-shadow: rgba(0, 255, 0, 0.8);
+      }
+    }
+
     footer {
       margin-top: 20px;
       color: white;
@@ -75,7 +102,7 @@ export const ConverterBox = styled.div`
 
   background-color: white;
 
-  form {
+  div {
     padding: 20px;
 
     height: 100%;
@@ -87,10 +114,7 @@ export const ConverterBox = styled.div`
   }
 `;
 
-export const Input = styled.input.attrs((props) => ({
-  type: "number",
-  placeholder: `${props.onHolder}`,
-}))`
+export const Input = styled.input`
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -201,28 +225,22 @@ export const ResponseBox = styled.span`
 
 export const Response = styled.output`
   display: flex;
+  justify-content: start;
   width: 180px;
   height: 15px;
-  padding: 10px 0 10px 35px;
+  padding: 10px 0 10px 25px;
   font-weight: 400;
   color: #0c7b49;
   background: #efefef;
   border: 0;
   border-radius: 3px;
   outline: 0;
-  text-indent: 65px; // Arbitrary.
-  transition: all 0.3s ease-in-out;
   margin-top: 5px;
 
   font-size: 16px;
   font-weight: bold;
 
   margin-left: 40px;
-`;
-
-export const ButtonBox = styled.span`
-  display: flex;
-  justify-content: center;
 `;
 
 export const Button = styled.button`
