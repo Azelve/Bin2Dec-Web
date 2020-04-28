@@ -10,7 +10,7 @@ import {
 } from "./styles";
 
 export default function App() {
-  // Here we have the variables to our binary and decimal numbers
+  // Here we have the variables to our binary and decimal numbers, also the label and its color
   const [binary, setBinary] = useState(0);
   const [decimal, setDecimal] = useState(0);
   const [label, setLabel] = useState("Binary");
