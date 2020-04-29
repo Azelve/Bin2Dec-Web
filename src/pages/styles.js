@@ -55,7 +55,7 @@ export const Container = styled.div`
     }
 
     footer {
-      margin-top: 20px;
+      margin-top: 40px;
       color: white;
       padding: 5px;
 

@@ -11,12 +11,12 @@ import {
 
 export default function App() {
   // Here we have the variables to our binary and decimal numbers, also the label and its color
-  const [binary, setBinary] = useState(0);
+  const [binary, setBinary] = useState();
   const [decimal, setDecimal] = useState(0);
   const [label, setLabel] = useState("Binary");
   const [labelColor, setLabelColor] = useState("#008000");
 
-  // Here we are seting the new Binary number onChange and checking if is a binary number
+  // Here we are seting the new Binary number onChange and checking if it is a binary number
   function checkField(e) {
     const binaryCheck = e.target.value;
     let x;
