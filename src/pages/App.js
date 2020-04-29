@@ -11,7 +11,7 @@ import {
 
 export default function App() {
   // Here we have the variables to our binary and decimal numbers, also the label and its color
-  const [binary, setBinary] = useState();
+  const [binary, setBinary] = useState(0);
   const [decimal, setDecimal] = useState(0);
   const [label, setLabel] = useState("Binary");
   const [labelColor, setLabelColor] = useState("#008000");
@@ -32,10 +32,10 @@ export default function App() {
         setLabel("Error!");
         return setLabelColor("#e50000");
       }
-      setLabel("Binary");
-      setLabelColor("#008000");
-      setBinary(binaryCheck);
     }
+    setLabel("Binary");
+    setLabelColor("#008000");
+    setBinary(binaryCheck);
   }
 
   // Here we are checking if the number is correct and making the conversion
