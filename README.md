@@ -1,4 +1,4 @@
-# Bin2Dec
+# Bin2Dec-Web
 
 **Tier:** 1-Beginner
 
